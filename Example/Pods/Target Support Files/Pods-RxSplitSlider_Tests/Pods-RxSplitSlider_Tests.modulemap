@@ -1,0 +1,6 @@
+framework module Pods_RxSplitSlider_Tests {
+  umbrella header "Pods-RxSplitSlider_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

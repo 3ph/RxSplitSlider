@@ -1,0 +1,6 @@
+framework module SplitSlider {
+  umbrella header "SplitSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

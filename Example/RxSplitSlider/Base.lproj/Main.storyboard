@@ -1,29 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gSl-eu-TRX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="DRr-kL-3rf">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="RxSplitSlider_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gSl-eu-TRX" customClass="ViewController" customModule="SplitSlider_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="sJn-UA-WPt"/>
+                        <viewControllerLayoutGuide type="bottom" id="zJX-JC-cWM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="KGd-Fo-oL7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqk-aD-S4f" customClass="SplitSlider" customModule="SplitSlider">
+                                <rect key="frame" x="37.5" y="46" width="300" height="167"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYl-ct-NsR">
+                                <rect key="frame" x="82.5" y="318" width="51" height="31"/>
+                                <connections>
+                                    <action selector="snapToStepToggle:" destination="gSl-eu-TRX" eventType="valueChanged" id="n42-1k-dJ8"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snap to step" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-qy-KUW">
+                                <rect key="frame" x="139.5" y="323" width="96.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2ka-qy-KUW" firstAttribute="centerY" secondItem="KGd-Fo-oL7" secondAttribute="centerY" id="4lE-49-OjP"/>
+                            <constraint firstItem="Rqk-aD-S4f" firstAttribute="top" secondItem="sJn-UA-WPt" secondAttribute="bottom" constant="26" id="9cK-ez-42r"/>
+                            <constraint firstItem="Rqk-aD-S4f" firstAttribute="centerX" secondItem="KGd-Fo-oL7" secondAttribute="centerX" id="CgC-VY-Tgc"/>
+                            <constraint firstItem="Rqk-aD-S4f" firstAttribute="width" secondItem="KGd-Fo-oL7" secondAttribute="width" multiplier="0.8" id="FEY-SK-OU7"/>
+                            <constraint firstItem="KYl-ct-NsR" firstAttribute="centerY" secondItem="2ka-qy-KUW" secondAttribute="centerY" id="gJd-OA-BGk"/>
+                            <constraint firstItem="2ka-qy-KUW" firstAttribute="centerX" secondItem="KGd-Fo-oL7" secondAttribute="centerX" id="lxF-rI-Smy"/>
+                            <constraint firstItem="Rqk-aD-S4f" firstAttribute="height" secondItem="KGd-Fo-oL7" secondAttribute="height" multiplier="0.25" id="qJB-ia-rqF"/>
+                            <constraint firstItem="2ka-qy-KUW" firstAttribute="leading" secondItem="KYl-ct-NsR" secondAttribute="trailing" constant="8" symbolic="YES" id="xeP-oa-R7a"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="snapToStep" destination="KYl-ct-NsR" id="fzN-lR-9r5"/>
+                        <outlet property="splitSlider" destination="Rqk-aD-S4f" id="vpg-Fw-nJy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWw-yb-dgi" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
