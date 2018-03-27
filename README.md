@@ -1,9 +1,9 @@
 # RxSplitSlider
 
-[![CI Status](http://img.shields.io/travis/3ph/SplitSlider.svg?style=flat)](https://travis-ci.org/3ph/RxSplitSlider)
-[![Version](https://img.shields.io/cocoapods/v/SplitSlider.svg?style=flat)](http://cocoapods.org/pods/RxSplitSlider)
-[![License](https://img.shields.io/cocoapods/l/SplitSlider.svg?style=flat)](http://cocoapods.org/pods/RxSplitSlider)
-[![Platform](https://img.shields.io/cocoapods/p/SplitSlider.svg?style=flat)](http://cocoapods.org/pods/RxSplitSlider)
+[![CI Status](http://img.shields.io/travis/3ph/RxSplitSlider.svg?style=flat)](https://travis-ci.org/3ph/RxSplitSlider)
+[![Version](https://img.shields.io/cocoapods/v/RxSplitSlider.svg?style=flat)](http://cocoapods.org/pods/RxSplitSlider)
+[![License](https://img.shields.io/cocoapods/l/RxSplitSlider.svg?style=flat)](http://cocoapods.org/pods/RxSplitSlider)
+[![Platform](https://img.shields.io/cocoapods/p/RxSplitSlider.svg?style=flat)](http://cocoapods.org/pods/RxSplitSlider)
 ![Swift](https://img.shields.io/badge/in-swift4.0-orange.svg)
 
 Reactive extension for SplitSlider.
@@ -17,26 +17,61 @@ max, step, colors, etc.
 
 Simply add as custom view to storyboard or create programatically. Don't forget to import `SplitSlider` as well.
 
-`let slider = SplitSlider()`
+```swift
+let slider = SplitSlider()
+```
 
 #### Generic slider properties (affects both parts):
 
-`slider.min` - minimal slider value.
-`slider.max` - maximal slider value.
-`slider.step` - step value of the slider.
-`slider.labelFont` - font of the value labels.
-`slider.labelTextColor` - font color of the value labels.
-`slider.thumbSize` - size of the slider's thumb.
-`slider.thumbColor` - color of the thumb.
-`slider.trackHeight` - track height.
-`slider.trackColor` - track color.
-`slider.trackHighlightColor` - color of selected part of the track.
-`slider.snapToStep` - determines if thumb should be snapped to the closest step after the move.
+```swift
+// Minimal slider value.
+slider.min = 0
+```
+```swift
+// Maximal slider value.
+slider.max = 100
+```
+```swift
+// Step value of the slider.
+slider.step = 5
+```
+```swift
+// Font of the value labels.
+slider.labelFont = UIFont.systemFont(ofSize: 10)
+```
+```swift
+// Font color of the value labels.
+slider.labelTextColor = UIColor.black
+```
+```swift
+// Size of the slider's thumb.
+slider.thumbSize = 20
+```
+```swift
+// Color of the thumb.
+slider.thumbColor = UIColor.darkGray
+```
+```swift
+// Track height.
+slider.trackHeight = 0
+```
+```swift
+// Track color.
+slider.trackColor = = UIColor.lightGray
+```
+```swift
+// Color of selected part of the track.
+slider.trackHighlightColor = UIColor.gray
+```
+```swift
+// Determines if thumb should be snapped to the closest step after the move.
+slider.snapToStep = true
+```
 
 All above properties would affect both portions of the slider but can be set individually through either `slider.left` or `slider.right` portion.
 
 #### Observing changes
-```
+```swift
 // Slider portion selected - called when user selects (holds) portion of the slider. Return `nil` when no portion is being selected.
 splitSlider
     .rx
